@@ -131,3 +131,107 @@ v3  a76281232088fce7685736eb4b2578643ae7218000e2faae880385d1404435cb  SciCalc_v3
 ## License
 
 The source is provided under the MIT License; see [`LICENSE`](LICENSE).
+
+## Panduan Bahasa Indonesia
+
+**SciCalc adalah kalkulator ilmiah native untuk Xiaomi Smart Band 10 Pro.**
+Ini bukan aplikasi ponsel. File `.bin` yang diunduh adalah paket watchface yang
+memasang dan menjalankan aplikasi native C/LVGL di smartband.
+
+Repository ini berisi tiga rilis yang bisa dipasang, source code kalkulator
+terbaru, dan script build. Installer saat ini ditujukan untuk firmware Smart
+Band 10 Pro `3.201.016`; firmware lain belum diverifikasi.
+
+### Pilihan rilis
+
+| Rilis | Paket | Keterangan |
+| --- | --- | --- |
+| v1 | [Unduh dari GitHub release v1](https://github.com/mchaworks/MiBand10Pro-SciCalc/releases/tag/v1) | Rilis awal dengan UI kalkulator bergaya Apple. |
+| v2 | [Unduh dari GitHub release v2](https://github.com/mchaworks/MiBand10Pro-SciCalc/releases/tag/v2) | Paket kalkulator v2 yang dipulihkan; file aslinya tetap dipertahankan. |
+| v3 | [Unduh dari GitHub release v3](https://github.com/mchaworks/MiBand10Pro-SciCalc/releases/tag/v3) | Source dan build terbaru: keypad utama/ilmiah, tombol nol lebar, navigasi halaman, dan backspace hasil. |
+
+Gunakan paket v3 kecuali memang memerlukan versi lama. Setiap file merupakan
+container resource watchface berukuran tetap; jangan ubah nama menjadi file ELF
+atau mencoba memuat file `.bin` langsung dengan `insmod`.
+
+### Cara memasang
+
+1. Pastikan perangkat adalah **Xiaomi Smart Band 10 Pro** dengan firmware
+   `3.201.016`.
+2. Unduh `SciCalc_v3.bin` dari bagian aset pada rilis v3.
+3. Pasang paket menggunakan metode pemasangan watchface yang mendukung paket
+   custom Xiaomi Smart Band 10 Pro. Ikuti petunjuk di installer tersebut
+   sampai paket diterapkan ke smartband.
+4. Buka watchface/installer SciCalc yang sudah terpasang dan tekan **Install**
+   jika diminta. Installer menyalin ELF native dan logo yang sesuai, memuat
+   modul native, mendaftarkan kalkulator, lalu menutup sendiri.
+5. Buka **SciCalc** dari app launcher pada smartband.
+
+Paket watchface dan kalkulator native adalah dua tahap berbeda: menerapkan
+file `.bin` memasang launcher kecil; menjalankan launcher memuat aplikasi
+native. Setelah modul berhasil dimuat, installer menghapus dirinya sendiri.
+Pada penggunaan pertama, tunggu sampai installer selesai dan kembali ke
+launcher sebelum membuka SciCalc.
+
+Jika installer menyatakan firmware tidak didukung, hentikan proses. Jangan
+memaksa ELF dari firmware lain ke perangkat.
+
+### Cara menggunakan
+
+#### Keypad utama
+
+- Tekan angka dan operator untuk memasukkan ekspresi.
+- `C` menghapus input saat ini.
+- `±` mengubah tanda angka atau suku saat ini.
+- `%` menerapkan persen postfix.
+- `.` memasukkan tanda desimal.
+- `=` menghitung ekspresi.
+- Tekan tombol panah di samping hasil besar untuk menghapus karakter terakhir.
+- Tombol `0` yang lebar menggunakan dua kolom keypad.
+
+#### Keypad ilmiah
+
+- Tekan pill judul `SciCalc` untuk membuka halaman ilmiah; tekan lagi untuk
+  kembali ke keypad utama.
+- Tekan `>` atau `<` untuk berpindah halaman ilmiah, atau tekan titik indikator
+  halaman.
+- Fungsi ilmiah mencakup trigonometri dan inversnya, fungsi hiperbolik,
+  logaritma, akar, pangkat, faktorial, konstanta, dan memori. Lihat tombol yang
+  tampil di perangkat untuk daftar lengkap.
+- Tombol `=` membentang sepanjang tiga baris di kolom kanan.
+
+### Build dari source
+
+Struktur build mandiri ada di [`source/`](source/). Folder ini berisi source C
+kalkulator, engine ekspresi desimal, binding firmware `3.201.016`, installer
+watchface, logo, script repacker resource, dan linker script.
+
+Kebutuhan build:
+
+- `clang` dengan dukungan target ARM bare-metal
+- `ld.lld`
+- Python 3
+- Template `resource.bin` Xiaomi Smart Band 10 Pro yang kompatibel
+
+Dari dalam folder `source/`, jalankan:
+
+```sh
+sh build_scicalc.sh /path/ke/resource.bin /path/ke/SciCalc_custom.bin
+```
+
+Build menargetkan ARM Cortex-M33 dengan hard-float ABI firmware. Jika perlu,
+build mencoba optimisasi ukuran, memastikan ELF muat ke slot resource, dan
+mempertahankan ukuran total paket. Template resource tidak disertakan karena
+bergantung pada perangkat/firmware.
+
+### Batasan yang diketahui
+
+- Yang sudah diverifikasi hanya firmware `3.201.016`.
+- Tampilan dan glyph font bisa sedikit berbeda pada perangkat; periksa hasilnya
+  langsung di smartband setelah pemasangan.
+- Saat ditekan, pill memakai latar lebih terang dengan warna teks normal.
+  Binding firmware yang tersedia belum memiliki setter warna teks yang
+  terverifikasi.
+- Hapus input dengan swipe tidak diaktifkan.
+
+Source menggunakan lisensi MIT; lihat [`LICENSE`](LICENSE).
