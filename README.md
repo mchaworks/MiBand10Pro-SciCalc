@@ -12,9 +12,9 @@ firmware `3.201.016`; other firmware versions are not verified.
 
 | Release | File | Summary |
 | --- | --- | --- |
-| v1 | [GitHub release v1](https://github.com/nopiasminar111-stack/MiBand10Pro-SciCalc/releases/tag/v1) | Initial Apple-inspired calculator UI release. |
-| v2 | [GitHub release v2](https://github.com/nopiasminar111-stack/MiBand10Pro-SciCalc/releases/tag/v2) | Restored v2 calculator package; original binary preserved. |
-| v3 | [GitHub release v3](https://github.com/nopiasminar111-stack/MiBand10Pro-SciCalc/releases/tag/v3) | Latest source/build: main and scientific keypads, wide zero, page navigation, and result backspace. |
+| v1 | [GitHub release v1](https://github.com/mchaworks/MiBand10Pro-SciCalc/releases/tag/v1) | Initial Apple-inspired calculator UI release. |
+| v2 | [GitHub release v2](https://github.com/mchaworks/MiBand10Pro-SciCalc/releases/tag/v2) | Restored v2 calculator package; original binary preserved. |
+| v3 | [GitHub release v3](https://github.com/mchaworks/MiBand10Pro-SciCalc/releases/tag/v3) | Latest source/build: main and scientific keypads, wide zero, page navigation, and result backspace. |
 
 Use the v3 package unless you specifically need an earlier version. Each
 package is a fixed-size watchface resource container; do not rename it to an
