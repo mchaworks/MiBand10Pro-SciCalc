@@ -78,9 +78,10 @@ ELF built for a different firmware onto the device.
 
 ## Build from source
 
-The self-contained build tree is in [`source/`](source/). It includes the
-calculator C source, decimal expression engine, firmware `3.201.016` bindings,
-watchface installer, logo, resource repacker, and linker script.
+Download and extract [`source.zip`](source.zip) to get the self-contained build
+tree. It includes the calculator C source, decimal expression engine, firmware
+`3.201.016` bindings, watchface installer, logo, resource repacker, and linker
+script.
 
 Requirements:
 
@@ -89,9 +90,11 @@ Requirements:
 - Python 3
 - A compatible Smart Band 10 Pro `resource.bin` template
 
-From the `source/` directory:
+From the repository root, extract the archive and enter the build tree:
 
 ```sh
+unzip source.zip
+cd source
 sh build_scicalc.sh /path/to/resource.bin /path/to/SciCalc_custom.bin
 ```
 
@@ -107,7 +110,7 @@ is not included because it is device/firmware-specific.
 - `source/mb10pro/wf_native_sci/app/lua/main.lua` — watchface installer.
 - `source/platform/mb10p/fw_3.201.016/` — firmware-specific bindings.
 - `source/build_scicalc.sh` — compile and package script.
-- `releases/` — v1, v2, and v3 installable `.bin` packages.
+- GitHub Releases `v1`–`v3` — installable `.bin` packages.
 
 ## Known limitations
 
@@ -202,9 +205,10 @@ memaksa ELF dari firmware lain ke perangkat.
 
 ### Build dari source
 
-Struktur build mandiri ada di [`source/`](source/). Folder ini berisi source C
-kalkulator, engine ekspresi desimal, binding firmware `3.201.016`, installer
-watchface, logo, script repacker resource, dan linker script.
+Unduh dan ekstrak [`source.zip`](source.zip) untuk mendapatkan struktur build
+mandiri. Isinya mencakup source C kalkulator, engine ekspresi desimal, binding
+firmware `3.201.016`, installer watchface, logo, script repacker resource, dan
+linker script.
 
 Kebutuhan build:
 
@@ -213,9 +217,11 @@ Kebutuhan build:
 - Python 3
 - Template `resource.bin` Xiaomi Smart Band 10 Pro yang kompatibel
 
-Dari dalam folder `source/`, jalankan:
+Dari root repository, ekstrak arsip lalu masuk ke folder build:
 
 ```sh
+unzip source.zip
+cd source
 sh build_scicalc.sh /path/ke/resource.bin /path/ke/SciCalc_custom.bin
 ```
 
