@@ -4,7 +4,7 @@
 It is not a phone app. The downloadable `.bin` files are watchface packages
 that install and launch a native C/LVGL application on the band.
 
-This repository contains three installable releases, the latest calculator
+This repository contains four installable releases, the latest calculator
 source, and a build script. The installer currently targets Smart Band 10 Pro
 firmware `3.201.016`; other firmware versions are not verified.
 
@@ -14,9 +14,9 @@ firmware `3.201.016`; other firmware versions are not verified.
 | --- | --- | --- |
 | v1 | [GitHub release v1](https://github.com/mchaworks/MiBand10Pro-SciCalc/releases/tag/v1) | Initial Apple-inspired calculator UI release. |
 | v2 | [GitHub release v2](https://github.com/mchaworks/MiBand10Pro-SciCalc/releases/tag/v2) | Restored v2 calculator package; original binary preserved. |
-| v3 | [GitHub release v3](https://github.com/mchaworks/MiBand10Pro-SciCalc/releases/tag/v3) | Latest source/build: main and scientific keypads, wide zero, page navigation, and result backspace. |
+| v3 | [GitHub release v3](https://github.com/mchaworks/MiBand10Pro-SciCalc/releases/tag/v3) | Main and scientific keypads, wide zero, page navigation, and result backspace. |
 
-Use the v3 package unless you specifically need an earlier version. Each
+Latest release: [SciCalc v4 on GitHub](https://github.com/mchaworks/MiBand10Pro-SciCalc/releases/tag/v4). Use the v4 package unless you specifically need an earlier version. Each
 package is a fixed-size watchface resource container; do not rename it to an
 ELF file or try to load the `.bin` directly with `insmod`.
 
@@ -35,7 +35,7 @@ ELF file or try to load the `.bin` directly with `insmod`.
 
 1. Confirm that the band is a **Xiaomi Smart Band 10 Pro** running firmware
    `3.201.016`.
-2. Download `SciCalc_v3.bin` from the v3 release assets.
+2. Download `SciCalc_v4.bin` from the v4 release assets.
 3. Install the package using a watchface installation method that supports
    custom Xiaomi Smart Band 10 Pro resource/watchface packages. Follow that
    installer's on-screen steps and let it apply the package to the band.
@@ -110,7 +110,7 @@ is not included because it is device/firmware-specific.
 - `source/mb10pro/wf_native_sci/app/lua/main.lua` — watchface installer.
 - `source/platform/mb10p/fw_3.201.016/` — firmware-specific bindings.
 - `source/build_scicalc.sh` — compile and package script.
-- GitHub Releases `v1`–`v3` — installable `.bin` packages.
+- GitHub Releases `v1`–`v4` — installable `.bin` packages.
 
 ## Known limitations
 
@@ -128,7 +128,7 @@ SHA-256:
 ```text
 v1  b7ebc2a224ffc24f741e6302beacfeb9061e060d2439e5a69b4b68ce17ab5982  SciCalc_v1.bin
 v2  4690e0c31342fb216a81ddf6bfc6b26efa09f7a8d10e12e0c309d738920cea53  SciCalc_v2.bin
-v3  a76281232088fce7685736eb4b2578643ae7218000e2faae880385d1404435cb  SciCalc_v3.bin
+v3  a76281232088fce7685736eb4b2578643ae7218000e2faae880385d1404435cb  SciCalc_v3.bin; v4  31f70c7f3776c082796a0b195f9a6594e1c0124be6d11a5d6cf19baf19449590  SciCalc_v4.bin
 ```
 
 ## License
@@ -141,7 +141,7 @@ The source is provided under the MIT License; see [`LICENSE`](LICENSE).
 Ini bukan aplikasi ponsel. File `.bin` yang diunduh adalah paket watchface yang
 memasang dan menjalankan aplikasi native C/LVGL di smartband.
 
-Repository ini berisi tiga rilis yang bisa dipasang, source code kalkulator
+Repository ini berisi empat rilis yang bisa dipasang, source code kalkulator
 terbaru, dan script build. Installer saat ini ditujukan untuk firmware Smart
 Band 10 Pro `3.201.016`; firmware lain belum diverifikasi.
 
@@ -151,9 +151,9 @@ Band 10 Pro `3.201.016`; firmware lain belum diverifikasi.
 | --- | --- | --- |
 | v1 | [Unduh dari GitHub release v1](https://github.com/mchaworks/MiBand10Pro-SciCalc/releases/tag/v1) | Rilis awal dengan UI kalkulator bergaya Apple. |
 | v2 | [Unduh dari GitHub release v2](https://github.com/mchaworks/MiBand10Pro-SciCalc/releases/tag/v2) | Paket kalkulator v2 yang dipulihkan; file aslinya tetap dipertahankan. |
-| v3 | [Unduh dari GitHub release v3](https://github.com/mchaworks/MiBand10Pro-SciCalc/releases/tag/v3) | Source dan build terbaru: keypad utama/ilmiah, tombol nol lebar, navigasi halaman, dan backspace hasil. |
+| v3 | [Unduh dari GitHub release v3](https://github.com/mchaworks/MiBand10Pro-SciCalc/releases/tag/v3) | Keypad utama/ilmiah, tombol nol lebar, navigasi halaman, dan backspace hasil. |
 
-Gunakan paket v3 kecuali memang memerlukan versi lama. Setiap file merupakan
+Rilis terbaru: [SciCalc v4 di GitHub](https://github.com/mchaworks/MiBand10Pro-SciCalc/releases/tag/v4). Gunakan paket v4 kecuali memang memerlukan versi lama. Setiap file merupakan
 container resource watchface berukuran tetap; jangan ubah nama menjadi file ELF
 atau mencoba memuat file `.bin` langsung dengan `insmod`.
 
@@ -161,7 +161,7 @@ atau mencoba memuat file `.bin` langsung dengan `insmod`.
 
 1. Pastikan perangkat adalah **Xiaomi Smart Band 10 Pro** dengan firmware
    `3.201.016`.
-2. Unduh `SciCalc_v3.bin` dari bagian aset pada rilis v3.
+2. Unduh `SciCalc_v4.bin` dari bagian aset pada rilis v4.
 3. Pasang paket menggunakan metode pemasangan watchface yang mendukung paket
    custom Xiaomi Smart Band 10 Pro. Ikuti petunjuk di installer tersebut
    sampai paket diterapkan ke smartband.
